@@ -13,7 +13,7 @@ sources:
       consolidated: true
       urlpath:
         - http://hackathon-o.s3.jc.rl.ac.uk/sim-data/prod/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr
-      driver: zarr
+    driver: zarr
     parameters:
       time:
         allowed:
