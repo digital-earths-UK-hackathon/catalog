@@ -70,7 +70,7 @@ sources:
       creator_email: richard.w.jones@metoffice.gov.uk, claudio.sanchez@metoffice.gov.uk, huw.lewis@metoffice.gov.uk, calum.scullion@metoffice.gov.uk, dasha.shchepanovska@metoffice.gov.uk, mark.muetzelfeldt@reading.ac.uk
       history: Calum Scullion ran this simulation on Atos (ECMWF), Mark Muetzelfeldt converted from UM lat/lon output to healpix (JASMIN)
       institution: Met Office
-  um_Africa_km4p4_RAL3P3_n1280_GAL9_nest:
+  um_Africa_km4p4_RAL3P3_n1280_CoMA9_nest:
     args:
       chunks: null
       consolidated: true
