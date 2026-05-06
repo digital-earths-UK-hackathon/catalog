@@ -85,7 +85,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_GAL9_v2/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_GAL9_v2/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
@@ -143,7 +143,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
@@ -202,7 +202,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/Africa_km4p4_RAL3P3.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/Africa_km4p4_RAL3P3.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
