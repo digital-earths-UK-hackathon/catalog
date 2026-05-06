@@ -5,10 +5,6 @@ metadata:
       description: is client on JASMIN
       type: bool
       default: true
-    base_url:
-      description: Dynamically constructed base URL
-      type: str
-      default: "{{ 'http' if on_jasmin else 'https' }}://hackathon-o.s3{{ '' if on_jasmin else '-ext' }}.jc.rl.ac.uk"
     processing_version:
       description: development processing version of data
       type: str
@@ -25,7 +21,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr"
+        - "{{ 'http' if on_jasmin else 'https' }}://hackathon-o.s3{{ '' if on_jasmin else '-ext' }}.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
@@ -85,7 +81,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_GAL9_v2/um.{{ time }}.hp_z{{ zoom }}.zarr"
+        - "{{ 'http' if on_jasmin else 'https' }}://hackathon-o.s3{{ '' if on_jasmin else '-ext' }}.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_GAL9_v2/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
@@ -143,7 +139,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr"
+        - "{{ 'http' if on_jasmin else 'https' }}://hackathon-o.s3{{ '' if on_jasmin else '-ext' }}.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
@@ -202,7 +198,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/Africa_km4p4_RAL3P3.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr"
+        - "{{ 'http' if on_jasmin else 'https' }}://hackathon-o.s3{{ '' if on_jasmin else '-ext' }}.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/Africa_km4p4_RAL3P3.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
