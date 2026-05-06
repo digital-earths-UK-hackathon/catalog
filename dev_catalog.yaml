@@ -1,14 +1,22 @@
 # For development/testing purposes only.
 metadata:
   parameters:
+    on_jasmin:
+      description: is client on JASMIN
+      type: bool
+      default: true
+    base_url:
+      description: Dynamically constructed base URL
+      type: str
+      default: "{{ 'http' if on_jasmin else 'https' }}://hackathon-o.s3{{ '' if on_jasmin else '-ext' }}.jc.rl.ac.uk"
     processing_version:
       description: development processing version of data
       type: str
-      default: v6.7.cf_compliance
+      default: v7
     deploy:
       description: dev(elopment) or prod(uction)
       type: str
-      default: dev
+      default: prod
 
 sources:
   # Global.
@@ -17,7 +25,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - http://hackathon-o.s3.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr
     driver: zarr
     parameters:
       time:
@@ -77,7 +85,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - http://hackathon-o.s3.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_GAL9_v2/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_GAL9_v2/um.{{ time }}.hp_z{{ zoom }}.zarr
     driver: zarr
     parameters:
       time:
@@ -135,7 +143,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - http://hackathon-o.s3.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr
     driver: zarr
     parameters:
       time:
@@ -194,7 +202,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - http://hackathon-o.s3.jc.rl.ac.uk/sim-data/{{ deploy }}/{{ processing_version }}/Africa_km4p4_RAL3P3.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/Africa_km4p4_RAL3P3.n1280_CoMA9/um.{{ time }}.hp_z{{ zoom }}.zarr
     driver: zarr
     parameters:
       time:
