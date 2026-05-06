@@ -25,7 +25,7 @@ sources:
       chunks: null
       consolidated: true
       urlpath:
-        - {{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr
+        - "{{ base_url }}/sim-data/{{ deploy }}/{{ processing_version }}/glm.n2560_RAL3p3.tuned/um.{{ time }}.hp_z{{ zoom }}.zarr"
     driver: zarr
     parameters:
       time:
